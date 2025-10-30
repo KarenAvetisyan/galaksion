@@ -258,6 +258,9 @@ body::-webkit-scrollbar-thumb {
     border-radius: 34px;
     padding-top: 50px;
   }
+  .banner-gradient{
+    border-radius: 0px;
+  }
   .banner-logo__link{
     margin-bottom: 26px;
     padding-left: 30px;
@@ -273,7 +276,7 @@ body::-webkit-scrollbar-thumb {
     overflow: visible;
     min-height: auto;
     border-radius: 0px;
-    padding: 24px 30px;
+    padding: 24px 15px 24px 30px;
   }
   .banner-txt{
     font-size: 34px;
