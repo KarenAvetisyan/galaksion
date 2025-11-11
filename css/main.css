@@ -400,10 +400,9 @@ body::-webkit-scrollbar-thumb {
   right: 0;
   top: 0;
   margin: auto;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transform: scale(0.95);
   background: var(--primaryGradient);
   z-index: -1;
   border-radius: 30px;
@@ -412,9 +411,6 @@ body::-webkit-scrollbar-thumb {
 
 }
 .access-item:hover::after{
-  width: 100%;
-  height: 100%;
-  transform: none;
   opacity: 1;
 }
 .access-item__icon{
@@ -489,8 +485,14 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media (max-width: 576px) {
+  .access {
+    padding-bottom: 20px;
+  }
   .accessBooth-stand{
     min-width: 100%;
+  }
+  .accessBooth-wrap{
+    padding-top: 90px;
   }
 }
 
@@ -504,8 +506,14 @@ body::-webkit-scrollbar-thumb {
 }
 .booking-address{
   display: inline-block;
-  width: 100%;
   padding-top: 128px;
+  position: relative;
+}
+.booking-address__link{
+  flex-shrink: 0;
+}
+.booking-address__link:hover{
+  animation: pulse 0.5s ease-in-out; 
 }
 .booking-address__txt{
   max-width: 550px;
@@ -529,6 +537,16 @@ body::-webkit-scrollbar-thumb {
   right: -70px;
   z-index: -1;
   pointer-events: none;
+}
+@media (max-width: 991px) {
+    .booking-address {
+      max-width: 395px;
+  }
+}
+@media (max-width: 767px) {
+    .booking-address {
+        max-width: 327px;
+    }
 }
 
 ._form-group {
@@ -602,8 +620,8 @@ fieldset ._error-text{
   margin: auto;
   pointer-events: none;
   max-width: 203px;
-  transform: scale(0);
-  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  transition: 0.4s;
   transform-origin: bottom center;
 }
 ._form-group__radio span{
@@ -623,10 +641,10 @@ fieldset ._error-text{
   background-color: var(--blue);
 }
 ._form-group__radio:hover img{
-  transform: scale(1);
+ opacity: 1;
 }
 ._form-group__radio input:checked ~ img{
-  transform: scale(0)!important;
+ opacity:0!important;
 }
 ._form-group__input{
   margin-bottom: 16px;
@@ -982,6 +1000,9 @@ fieldset ._error-text{
   }
   ._form-group__radio img{
     display: none!important;
+  }
+  ._form-group__radio span{
+    transition: 0s;
   }
 }
 @media (max-width: 767px) {
